@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neth Tithyarita - About</title>
+    <!-- <link rel="stylesheet" href="style.2.css"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+}
+
+.main-container {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.75rem;
+    background-color: #f8fafc;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.125rem;
+    max-width: 1200px;
+    color: #27272a;
+}
+
+.logo {
+    font-weight: bold;
+    line-height: 2rem;
+    color: #27272a;
+    font-size: 1.125rem;
+}
+
+.navigation {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    align-self: flex-start;
+    font-weight: 500;
+    line-height: 1.75rem;
+    white-space: nowrap;
+}
+
+.nav-tab {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.nav-tab.active {
+    width: 52px;
+}
+
+.nav-label {
+    color: #27272a;
+}
+
+.nav-underline {
+    display: flex;
+    width: 100%;
+    border-radius: 0.125rem;
+    background-color: #27272a;
+    min-height: 0.125rem;
+    margin-top: 0.25rem;
+}
+
+/* About Section Styles */
+.about-section {
+    margin-top: 3rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.about-content {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.about-text-column {
+    width: 50%;
+}
+
+.about-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.about-text {
+    font-size: 1.25rem;
+    line-height: 2rem;
+    color: #71717a;
+}
+
+.resume-button {
+    align-self: flex-start;
+    padding: 0.5rem 1.5rem;
+    margin-top: 2rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    white-space: nowrap;
+    background-color: #fecaca;
+    border-radius: 0.5rem;
+    color: #27272a;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.resume-button:hover {
+    background-color: #fca5a5;
+}
+
+.about-image-column {
+    margin-left: 1.25rem;
+    width: 50%;
+}
+
+.profile-image {
+    object-fit: contain;
+    width: 100%;
+    border-radius: 0;
+    aspect-ratio: 1;
+}
+
+/* Contact Section Styles */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    color: #27272a;
+    margin-top: 12rem;
+}
+
+.contact-title {
+    color: #27272a;
+    font-size: 3rem;
+}
+
+.contact-underline {
+    display: flex;
+    margin-top: 0.25rem;
+    max-width: 100%;
+    background-color: #fecaca;
+    border-radius: 0.125rem;
+    min-height: 0.25rem;
+    width: 100px;
+}
+
+/* Footer Section Styles */
+.footer-section {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    padding: 0 5rem 8rem;
+    margin-top: 12rem;
+    width: 100%;
+    min-height: 289px;
+}
+
+.footer-background {
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.footer-content {
+    position: relative;
+    margin-bottom: 0;
+    max-width: 100%;
+    width: 259px;
+}
+
+.telegram-text {
+    font-size: 1.5rem;
+    text-align: center;
+    color: black;
+}
+
+.footer-icons-wrapper {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-top: 1rem;
+}
+
+.social-icons i {
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.icon-group {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.social-icon {
+    object-fit: contain;
+    flex-shrink: 0;
+    width: 3rem;
+    aspect-ratio: 1;
+}
+
+.social-icon-placeholder {
+    display: flex;
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+}
+
+.additional-icon {
+    object-fit: contain;
+    flex-shrink: 0;
+    aspect-ratio: 1;
+    width: 50px;
+}
+.nav-tab a{
+    text-decoration: none;
+}
+.navigation:hover {
+    color: #fbcfe8; /* Changes text color on hover */
+    transition: color 0.3s ease; /* Smooth transition effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        max-width: 100%;
+    }
+
+    .about-section {
+        margin-top: 2.5rem;
+        max-width: 100%;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text-column,
+    .about-image-column {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .about-text-wrapper {
+        margin-top: 2.5rem;
+        max-width: 100%;
+    }
+
+    .about-text {
+        max-width: 100%;
+    }
+
+    .resume-button {
+        padding: 0.5rem 1.25rem;
+    }
+
+    .profile-image {
+        margin-top: 2.5rem;
+        max-width: 100%;
+    }
+
+    .contact-title {
+        font-size: 2.25rem;
+    }
+
+    .contact-section {
+        font-size: 2.25rem;
+    }
+
+    .footer-section {
+        padding: 0 1.25rem 6rem;
+        margin-top: 2.5rem;
+        max-width: 100%;
+    }
+
+    .footer-content {
+        margin-bottom: 0.625rem;
+    }
+
+    .telegram-text {
+        margin-right: 0.25rem;
+    }
+}
+
+</style>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <h1 class="logo">Neth Tithyarita</h1>
+            <nav class="navigation">
+                <div class="nav-tab active" data-tab="about">
+                    <span class="nav-label">About</span>
+                    <div class="nav-underline"></div>
+                </div>
+                
+                <div class="nav-tab" data-tab="projects">
+                    <a href="portfolio1.html">
+                    <span class="nav-label">Projects</span>
+                    </a>
+                </div>
+                <div class="nav-tab" data-tab="contacts">
+                    <span class="nav-label">Contacts</span>
+                </div>
+            </nav>
+        </header>
+
+        <section class="about-section">
+            <div class="about-content">
+                <div class="about-text-column">
+                    <div class="about-text-wrapper">
+                        <p class="about-text">
+                            I am 19 years old and currently a third-year student at the
+                            Institute of Technology of Cambodia (ITC), majoring in
+                            Information and Communication Technology. I'm passionate about
+                            technology and am working toward becoming a professional
+                            software developer. I started with web development and have
+                            gained hands-on experience building responsive websites using
+                            HTML, CSS, JavaScript, and frameworks like Tailwind CSS.
+                            <br><br>
+                            In addition to frontend skills, I have a solid foundation in
+                            programming with C/C++ and JavaScript. I'm also comfortable
+                            using tools like Git & GitHub, Figma, and Visual Studio Code.
+                            Throughout my academic journey, I've worked on both individual
+                            and team projects, including an e-commerce website, a course
+                            registration system, and an automata visualizer for educational
+                            use.
+                            <br><br>
+                            My goal is to become a skilled software developer capable of
+                            building efficient and scalable applications that solve
+                            real-world problems. I'm continuously learning and improving to
+                            achieve that vision.
+                        </p>
+                        <button class="resume-button">Resume</button>
+                    </div>
+                </div>
+                <div class="about-image-column">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/7948f03763104d8fb388d8f19f997bce/06774340487bccec50f3812e4d8aac91578192db?placeholderIfAbsent=true" alt="Profile" class="profile-image">
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2 class="contact-title">Contact</h2>
+            <div class="contact-underline"></div>
+        </section>
+
+        <footer class="footer-section">
+            <img src="https://cdn.builder.io/api/v1/image/assets/7948f03763104d8fb388d8f19f997bce/e73b2125789c569c9a6c88318719866d520a8c71?placeholderIfAbsent=true" alt="Footer background" class="footer-background">
+            <div class="footer-content">
+                <p class="telegram-text">Telegram: 017 213 327</p>
+                <div class="footer-icons-wrapper">
+                    <div class="social-icons">
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-telegram"></i>
+                        <i class="fa-regular fa-envelope"></i>
+                        <div class="icon-group">
+                            <div class="social-icon-placeholder"></div>
+                            <div class="social-icon-placeholder"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Get all navigation tabs
+    const navTabs = document.querySelectorAll('.nav-tab');
+
+    // Add click event listeners to navigation tabs
+    navTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Remove active class from all tabs
+            navTabs.forEach(t => t.classList.remove('active'));
+
+            // Add active class to clicked tab
+            this.classList.add('active');
+
+            // Get the tab data attribute
+            const tabData = this.getAttribute('data-tab');
+
+            // You can add navigation logic here
+            console.log(`Navigating to: ${tabData}`);
+
+            // Example: You could implement smooth scrolling to sections
+            // or update the page content based on the selected tab
+        });
+    });
+
+    // Add hover effects to resume button
+    const resumeButton = document.querySelector('.resume-button');
+    if (resumeButton) {
+        resumeButton.addEventListener('click', function() {
+            console.log('Resume button clicked');
+            // Add your resume download or navigation logic here
+        });
+    }
+
+    // Add smooth scrolling for better UX (optional)
+    function smoothScrollTo(element) {
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    }
+
+    // Example: Add click handler for contact section navigation
+    const contactTab = document.querySelector('[data-tab="contacts"]');
+    const contactSection = document.querySelector('.contact-section');
+
+    if (contactTab && contactSection) {
+        contactTab.addEventListener('click', function() {
+            setTimeout(() => {
+                smoothScrollTo(contactSection);
+            }, 100);
+        });
+    }
+});
+
+    </script>
+</body>
+</html>
